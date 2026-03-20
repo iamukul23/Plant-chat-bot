@@ -1,0 +1,16 @@
+# Botanist Chatbot Testing Plan
+
+- [/] Open `file:///Users/yashasvigoyal/botanist-chatbot/index.html`
+  - ERROR: Access to file URL is blocked in the browser.
+  - Attempted common localhost ports (5173, 5174, 3000, 8080, 4173) - Connection refused.
+  - Unable to read the file directly due to allowlist restrictions.
+- [ ] Observe empty state UI
+- [ ] Click suggestion chip "Monstera has yellow leaves"
+- [ ] Wait for loading state and botanist response
+- [ ] Type "Hello" and hit Enter, wait for response
+- [ ] Click "Simulate Error" chip, wait for response
+- [ ] Verify UI responsiveness, animations, and scrolling
+- [ ] Provide detailed evaluation
+
+## Conclusion
+The task could not be completed as the requested URL `file:///Users/yashasvigoyal/botanist-chatbot/index.html` is blocked by the browser's security policies, and no local development server was found running on common ports.

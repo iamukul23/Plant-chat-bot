@@ -1,0 +1,35 @@
+# The Botanist Chatbot Project Implementation Plan
+
+## Goal Description
+Build "The Botanist", a specialized chatbot designed to act as a plant care expert and flora guide. The primary focus is on delivering a premium, highly themed frontend experience demonstrating excellent design, loading states, error states, empty states, and micro-interactions. The application will be constructed using static web technologies (HTML, CSS, JS) for fast performance, maximum flexibility, and easy deployment to platforms like Vercel.
+
+## Proposed Changes
+
+### Frontend UI (Vanilla HTML/CSS)
+#### [NEW] `botanist-chatbot/index.html`
+- Structure of the cohesive chat interface.
+- Includes a themed header, a scrollable main message area (to handle the empty state initially), and a sticky input area at the bottom.
+
+#### [NEW] `botanist-chatbot/style.css`
+- Botanical theme implementation using advanced CSS capabilities.
+- **Aesthetics**: Deep greens, earth tones, and semi-transparent glassmorphism (`backdrop-filter`) for the chat UI over a subtle botanical background.
+- **Typography**: Premium typography pairings (e.g., 'Playfair Display' for headers, 'Inter' for readability).
+- **Animations**: Smooth fade-ins for new messages and subtle hover effects on buttons.
+- **States**: Styling for the empty state ("Welcome to the Greenhouse"), realistic loading bubble animations, and distinct error state styling.
+
+### Chat Logic Implementation (Vanilla JS)
+#### [NEW] `botanist-chatbot/script.js`
+- Core interactivity and simulated AI behavior.
+- DOM manipulation to dynamically append user and bot messages.
+- **Mock LLM Engine**: A keyword-based response system tailored to plant care (e.g., identifying terms like "yellow leaves", "water", "succulent", "light").
+- **Delays & Loading**: Simulated network delays (1-3 seconds) to trigger the "Botanist is examining your plant..." loading UI before generating a response.
+- **Error Simulation**: Handling hidden triggers (like typing "simulate error") to explicitly demonstrate the error state UI to the user.
+- Auto-scrolling logic so the latest message is always in view.
+
+## Verification Plan
+
+### Manual Verification
+1. **Initial Load (Empty State)**: Open `index.html` in the browser and verify the initial UI welcomes the user appropriately with the targeted botanical aesthetic.
+2. **Standard Flow & Loading State**: Type a query (e.g., "My monstera has yellow leaves"). Verify that the input clears, a loading indicator appears, and after a short delay, the Botanist's response emerges seamlessly.
+3. **Error State**: Type "simulate error" to verify that the app handles failures gracefully and displays the designed error message block.
+4. **Responsiveness**: Shrink the browser window horizontally to simulate a mobile device and ensure the layout adapts correctly (input remains accessible, text does not overflow).

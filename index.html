@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Botanist - Plant Care Expert</title>
+    <meta name="description" content="Your personal AI plant care expert and flora guide.">
+    <!-- Google Fonts for typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Chat Interface -->
+        <main class="chat-wrapper">
+            <header class="chat-header">
+                <div class="avatar-container">
+                    <i class="fa-solid fa-leaf avatar-icon"></i>
+                </div>
+                <div class="header-info">
+                    <h1>The Botanist</h1>
+                    <span class="status-indicator">
+                        <span class="dot"></span> Online
+                    </span>
+                </div>
+            </header>
+
+            <div class="chat-area" id="chatArea">
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState">
+                    <i class="fa-solid fa-seedling hero-icon"></i>
+                    <h2>Welcome to the Greenhouse</h2>
+                    <p>I specialize in botanical care, plant pathology, and flora advice. How can I nurture your garden today?</p>
+                    <div class="suggestion-chips">
+                        <button class="chip" onclick="fillInput('My monstera has yellow leaves')">Monstera has yellow leaves</button>
+                        <button class="chip" onclick="fillInput('How often should I water a succulent?')">Watering a succulent</button>
+                        <button class="chip" onclick="fillInput('Best low light indoor plants')">Low light plants</button>
+                        <button class="chip error-chip" onclick="fillInput('simulate error')" title="For debugging">Simulate Error</button>
+                    </div>
+                </div>
+                <!-- Messages will be injected here via JS -->
+            </div>
+
+            <!-- Typing indicator (hidden by default) -->
+            <div class="typing-indicator-container" id="typingIndicator" style="display: none;">
+                <div class="bot-avatar-small"><i class="fa-solid fa-leaf"></i></div>
+                <div class="typing-bubble">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                </div>
+                <span class="typing-text">The Botanist is examining...</span>
+            </div>
+
+            <footer class="chat-input-container">
+                <form id="chatForm" class="input-form">
+                    <button type="button" class="attachment-btn" aria-label="Attach photo" title="Upload plant photo">
+                        <i class="fa-solid fa-camera"></i>
+                    </button>
+                    <div class="input-wrapper">
+                        <input type="text" id="userInput" placeholder="Ask about your plants..." autocomplete="off">
+                    </div>
+                    <button type="submit" class="send-btn" id="sendBtn" disabled>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
